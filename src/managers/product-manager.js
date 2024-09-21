@@ -13,32 +13,37 @@ class ProductManager {
     async cargarArray() {
         try {
             this.products = await this.leerArchivo();
+            // Ajustar ultId según el último id en el archivo
+            if (this.products.length > 0) {
+                ProductManager.ultId = Math.max(...this.products.map(product => product.id));
+            }
         } catch (error) {
             console.log("Error al inicializar ProductManager");
         }
     }
 
-    async addProduct({ title, description, price, img, code, stock }) {
-        if (!title || !description || !price || !img || !code || !stock) {
+    async addProduct({ title, description, price, code, stock, category, thumbnails = "sin imagen", status = true }) {
+        if (!title || !description || !price || !code || !stock || !category) {
             console.log("Todos los campos son obligatorios");
             return;
         }
 
         if (this.products.some(item => item.code === code)) {
-            console.log("Error: El codigo de producto ya existe");
+            console.log("Error: El código de producto ya existe");
             return;
         }
 
-        const lastProductId = this.products.length > 0 ? this.products[this.products.length - 1].id : 0;
-
+        // Generar un id único
         const nuevoProducto = {
-            id: lastProductId + 1,
+            id: ++ProductManager.ultId,
             title,
             description,
             price,
-            img,
             code,
-            stock
+            stock,
+            category,
+            thumbnails,
+            status
         };
 
         this.products.push(nuevoProducto);
@@ -65,7 +70,7 @@ class ProductManager {
             const buscado = arrayProductos.find(item => item.id === id);
 
             if (!buscado) {
-                console.log("producto no encontrado");
+                console.log("Producto no encontrado");
                 return null;
             } else {
                 console.log("Producto encontrado");

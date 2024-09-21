@@ -3,135 +3,165 @@
     "id": 1,
     "title": "Collar para perro ajustable",
     "description": "Collar resistente para perros medianos y grandes.",
-    "price": 12000,
-    "img": "sin imagen",
     "code": "P001",
-    "stock": 50
+    "price": 12000,
+    "status": true,
+    "stock": 50,
+    "category": "Accesorios para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 2,
     "title": "Rascador para gatos",
     "description": "Rascador compacto para gatos, ideal para mantener sus uñas.",
-    "price": 18000,
-    "img": "sin imagen",
     "code": "P002",
-    "stock": 30
+    "price": 18000,
+    "status": true,
+    "stock": 30,
+    "category": "Accesorios para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 3,
     "title": "Cama ortopédica para perros",
     "description": "Cama cómoda y ortopédica para perros mayores o con problemas de articulaciones.",
-    "price": 35000,
-    "img": "sin imagen",
     "code": "P003",
-    "stock": 20
+    "price": 35000,
+    "status": true,
+    "stock": 20,
+    "category": "Accesorios para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 4,
     "title": "Comedero automático para gatos",
     "description": "Comedero con temporizador para alimentar a tu gato en intervalos programados.",
-    "price": 25000,
-    "img": "sin imagen",
     "code": "P004",
-    "stock": 15
+    "price": 25000,
+    "status": true,
+    "stock": 15,
+    "category": "Accesorios para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 5,
     "title": "Juguete interactivo para perros",
     "description": "Juguete con dispensador de golosinas para estimular a tu perro.",
-    "price": 10000,
-    "img": "sin imagen",
     "code": "P005",
-    "stock": 60
+    "price": 10000,
+    "status": true,
+    "stock": 60,
+    "category": "Juguetes para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 6,
     "title": "Caja de arena para gatos",
     "description": "Caja de arena con sistema de autolimpieza para mantener la higiene de tu gato.",
-    "price": 22000,
-    "img": "sin imagen",
     "code": "P006",
-    "stock": 25
+    "price": 22000,
+    "status": true,
+    "stock": 25,
+    "category": "Accesorios para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 7,
     "title": "Correa extensible para perro",
     "description": "Correa extensible para paseos largos con tu perro.",
-    "price": 14000,
-    "img": "sin imagen",
     "code": "P007",
-    "stock": 35
+    "price": 14000,
+    "status": true,
+    "stock": 35,
+    "category": "Accesorios para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 8,
     "title": "Pelota de goma para perro",
     "description": "Pelota resistente para juegos al aire libre con tu perro.",
-    "price": 5000,
-    "img": "sin imagen",
     "code": "P008",
-    "stock": 100
+    "price": 5000,
+    "status": true,
+    "stock": 100,
+    "category": "Juguetes para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 9,
     "title": "Cepillo para pelo de gato",
     "description": "Cepillo suave para eliminar el pelo muerto de tu gato.",
-    "price": 8000,
-    "img": "sin imagen",
     "code": "P009",
-    "stock": 40
+    "price": 8000,
+    "status": true,
+    "stock": 40,
+    "category": "Accesorios para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 10,
     "title": "Transportadora para mascotas",
     "description": "Transportadora portátil para gatos o perros pequeños.",
-    "price": 32000,
-    "img": "sin imagen",
     "code": "P010",
-    "stock": 12
+    "price": 32000,
+    "status": true,
+    "stock": 12,
+    "category": "Accesorios para mascotas",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 11,
     "title": "Comida para perros adultos 10kg",
     "description": "Alimento balanceado para perros adultos de razas medianas.",
-    "price": 45000,
-    "img": "sin imagen",
     "code": "P011",
-    "stock": 80
+    "price": 45000,
+    "status": true,
+    "stock": 80,
+    "category": "Alimentos para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 12,
     "title": "Comida para gatos 5kg",
     "description": "Alimento completo y nutritivo para gatos de todas las edades.",
-    "price": 30000,
-    "img": "sin imagen",
     "code": "P012",
-    "stock": 70
+    "price": 30000,
+    "status": true,
+    "stock": 70,
+    "category": "Alimentos para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 13,
     "title": "Arnés para perro pequeño",
     "description": "Arnés ajustable para perros pequeños y cachorros.",
-    "price": 11000,
-    "img": "sin imagen",
     "code": "P013",
-    "stock": 55
+    "price": 11000,
+    "status": true,
+    "stock": 55,
+    "category": "Accesorios para perros",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 14,
     "title": "Golosinas para gatos",
     "description": "Paquete de golosinas saludables para gatos, sabor pescado.",
-    "price": 6000,
-    "img": "sin imagen",
     "code": "P014",
-    "stock": 90
+    "price": 6000,
+    "status": true,
+    "stock": 90,
+    "category": "Alimentos para gatos",
+    "thumbnails": "sin imagen"
   },
   {
     "id": 15,
     "title": "Cortaúñas para mascotas",
     "description": "Cortaúñas seguro para perros y gatos, fácil de usar.",
-    "price": 9000,
-    "img": "sin imagen",
     "code": "P015",
-    "stock": 65
+    "price": 9000,
+    "status": true,
+    "stock": 65,
+    "category": "Accesorios para mascotas",
+    "thumbnails": "sin imagen"
   }
 ]
