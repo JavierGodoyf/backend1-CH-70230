@@ -1,0 +1,26 @@
+{
+  "name": "pre-entrega-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "Javier Godoy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "description": "primera pre entrega coderhouse",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JavierGodoyf/backend1-CH-70230.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JavierGodoyf/backend1-CH-70230/issues"
+  },
+  "homepage": "https://github.com/JavierGodoyf/backend1-CH-70230#readme"
+}
