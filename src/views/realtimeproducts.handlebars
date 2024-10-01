@@ -1,0 +1,41 @@
+<h1 class="text-center"> Ingreso de productos</h1>
+<div class="container">
+    <form class="center mx-auto col-6">
+        <div class="form-group">
+            <label>Nombre Producto</label>
+            <input class="form-control" placeholder="Nombre de producto">
+        </div>
+        <div class="form-group">
+            <label>Descripcion</label>
+            <input class="form-control" placeholder="Descripcion del producto">
+        </div>
+        <div class="form-group">
+            <label>Codigo</label>
+            <input class="form-control" placeholder="Codigo del producto">
+        </div>
+        <div class="form-group">
+            <label>Stock</label>
+            <input class="form-control" placeholder="Stock">
+        </div>
+        <div class="form-group">
+            <label>Categoria</label>
+            <input class="form-control" placeholder="Categoria">
+        </div>
+        <div class="form-group">
+            <label>Precio</label>
+            <input class="form-control" placeholder="Precio">
+        </div>
+        <div class="form-group">
+            <label>Imagen</label><br>
+            <input type="file" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Submit</button>
+    </form>
+
+    <div id="contenedorProductos" class="my-4 row"> </div>
+</div>
+{{!-- Se conectan por CDN con socket.io https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js --}}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+<script src="js/index.js"></script>

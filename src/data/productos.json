@@ -1,49 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Collar para perro ajustable",
-    "description": "Collar resistente para perros medianos y grandes.",
-    "code": "P001",
-    "price": 12000,
-    "status": true,
-    "stock": 50,
-    "category": "Accesorios para perros",
-    "thumbnails": "sin imagen"
-  },
-  {
-    "id": 2,
-    "title": "Rascador para gatos",
-    "description": "Rascador compacto para gatos, ideal para mantener sus uñas.",
-    "code": "P002",
-    "price": 18000,
-    "status": true,
-    "stock": 30,
-    "category": "Accesorios para gatos",
-    "thumbnails": "sin imagen"
-  },
-  {
-    "id": 3,
-    "title": "Cama ortopédica para perros",
-    "description": "Cama cómoda y ortopédica para perros mayores o con problemas de articulaciones.",
-    "code": "P003",
-    "price": 35000,
-    "status": true,
-    "stock": 20,
-    "category": "Accesorios para perros",
-    "thumbnails": "sin imagen"
-  },
-  {
-    "id": 4,
-    "title": "Comedero automático para gatos",
-    "description": "Comedero con temporizador para alimentar a tu gato en intervalos programados.",
-    "code": "P004",
-    "price": 25000,
-    "status": true,
-    "stock": 15,
-    "category": "Accesorios para gatos",
-    "thumbnails": "sin imagen"
-  },
-  {
     "id": 5,
     "title": "Juguete interactivo para perros",
     "description": "Juguete con dispensador de golosinas para estimular a tu perro.",
@@ -52,17 +8,6 @@
     "status": true,
     "stock": 60,
     "category": "Juguetes para perros",
-    "thumbnails": "sin imagen"
-  },
-  {
-    "id": 6,
-    "title": "Caja de arena para gatos",
-    "description": "Caja de arena con sistema de autolimpieza para mantener la higiene de tu gato.",
-    "code": "P006",
-    "price": 22000,
-    "status": true,
-    "stock": 25,
-    "category": "Accesorios para gatos",
     "thumbnails": "sin imagen"
   },
   {

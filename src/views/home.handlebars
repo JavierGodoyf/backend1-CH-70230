@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="text-center my-4">Lista de Productos</h1>
+    <div class="row">
+        {{#each productos}}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">Descripción: {{this.description}}</p>
+                    <p class="card-text">Precio: {{this.price}}</p>
+                    <p class="card-text">Código: {{this.code}}</p>
+                    <p class="card-text">Stock: {{this.stock}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

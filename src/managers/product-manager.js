@@ -28,7 +28,7 @@ class ProductManager {
             return;
         }
 
-        if (this.products.some(item => item.code === code)) {
+        else if (this.products.some(item => item.code === code)) {
             console.log("Error: El código de producto ya existe");
             return;
         }
