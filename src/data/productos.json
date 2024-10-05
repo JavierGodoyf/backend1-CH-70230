@@ -11,17 +11,6 @@
     "thumbnails": "sin imagen"
   },
   {
-    "id": 7,
-    "title": "Correa extensible para perro",
-    "description": "Correa extensible para paseos largos con tu perro.",
-    "code": "P007",
-    "price": 14000,
-    "status": true,
-    "stock": 35,
-    "category": "Accesorios para perros",
-    "thumbnails": "sin imagen"
-  },
-  {
     "id": 8,
     "title": "Pelota de goma para perro",
     "description": "Pelota resistente para juegos al aire libre con tu perro.",
