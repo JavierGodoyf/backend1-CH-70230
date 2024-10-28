@@ -26,7 +26,7 @@ router.get("/:pid", async (req, res) => {
     let id = req.params.pid;
 
     try {
-        const productoBuscado = await manager.getProductById(parseInt(id));
+        const productoBuscado = await manager.getProductById(id);
 
         if (!productoBuscado) {
             res.send("Producto no encontrado");
@@ -57,12 +57,12 @@ router.put("/:pid", async (req, res) => {
     const nuevosDatos = req.body; // Obtenemos los datos que se quieren actualizar del body
 
     try {
-        const productoBuscado = await manager.getProductById(parseInt(id));
+        const productoBuscado = await manager.getProductById(id);
         if (!productoBuscado) {
             res.status(404).send("Producto no encontrado");
         } else {
             // Pasamos los nuevos datos que queremos modificar
-            await manager.updateProduct(parseInt(id), nuevosDatos);
+            await manager.updateProduct(id, nuevosDatos);
             res.status(200).send("Producto actualizado exitosamente");
         }
     } catch (error) {
@@ -75,14 +75,14 @@ router.delete("/:pid", async (req, res) => {
 
     try {
         // Busca el producto por ID
-        const productoBuscado = await manager.getProductById(parseInt(id));
+        const productoBuscado = await manager.getProductById(id);
 
         // Si el producto no existe, devuelve un mensaje de error
         if (!productoBuscado) {
             res.status(404).send("Producto no encontrado");
         } else {
             // Si el producto existe, lo elimina
-            await manager.deleteProduct(parseInt(id));
+            await manager.deleteProduct(id);
             res.status(200).send("Producto eliminado exitosamente");
         }
     } catch (error) {

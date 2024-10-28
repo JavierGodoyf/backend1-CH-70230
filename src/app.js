@@ -7,14 +7,23 @@ const cartRouter = require("./routes/carts.router.js");
 const viewsRouter = require("./routes/views.router.js");
 const app = express();
 const PUERTO = 8080;
+const mongoose = require('mongoose')
 
+mongoose.connect('mongodb+srv://admin:e0QAq64uNJupAYME@javiergcoderhouse.g56ba.mongodb.net/backend1?retryWrites=true&w=majority&appName=JavierGCoderHouse')
 //Middleware: 
 app.use(express.json());
 //Le decimos al servidor que vamos a trabajar con JSON. 
 app.use(express.static("./src/public"));
 
 //Configuramos Express-Handlebars
-app.engine("handlebars", exphbs.engine());
+app.engine("handlebars", exphbs.engine({
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}));
+
+
 app.set("view engine", "handlebars");
 app.set("views", "./src/views");
 

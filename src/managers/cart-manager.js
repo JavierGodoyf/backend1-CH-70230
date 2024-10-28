@@ -1,102 +1,101 @@
-const fs = require("fs").promises;
+const Cart = require('../models/cart.model');
 
 class CartManager {
-    constructor(path) {
-        this.path = path;
-        this.carts = [];
-        this.ultId = 0;
 
-        //Cargar los carritos almacenados en el archivo: 
-        this.cargarCarritos();
-    }
-
-    async cargarCarritos() {
+    async crearCarrito() {
         try {
-            const data = await fs.readFile(this.path, "utf-8");
-            this.carts = JSON.parse(data);
-            if (this.carts.length > 0) {
-                //Verifico si hay por lo menos algun elemento y voy a calcular el ultimo id: 
-                this.ultId = Math.max(...this.carts.map(cart => cart.id));
-                //Utilizo el método map para crear un nuevo array que solo tenga los ids y con Math.Max obtengo el mayor, guardandolo en la propiedad ultId. 
-            }
+            const newCart = new Cart({ products: [] });
+            await newCart.save();
+            return newCart;
         } catch (error) {
-            console.log("Error al cargar el carrito");
-            //Si no existe el archivo, lo voy a crear: 
-            await this.guardarCarritos();
+            console.log("Error al crear el carrito", error);
         }
     }
 
-    async guardarCarritos() {
-        await fs.writeFile(this.path, JSON.stringify(this.carts, null, 2));
-    }
-
-    //Metodo para crear un carrito: 
-
-    async crearCarrito() {
-        const nuevoCarrito = {
-            id: ++this.ultId,
-            products: []
-        };
-
-        //Este objeto "carrito" lo pusheamos al array: 
-        this.carts.push(nuevoCarrito);
-
-        //Guardamos el array en el archivo: 
-        await this.guardarCarritos();
-        return nuevoCarrito;
-    }
-
-    async getCarritoById(carritoId) {
+    async getCarritoById(id) {
         try {
-            const carrito = this.carts.find(c => c.id === parseInt(carritoId));
-            return carrito || null;
+            const cart = await Cart.findById(id).populate('products.product');
+            return cart;
         } catch (error) {
-            console.log("Error al buscar carrito por id", error);
-            return null;
+            console.log("Error al obtener carrito por ID", error);
         }
     }
 
     async agregarProductoAlCarrito(carritoId, productoId, quantity) {
         try {
-            const carrito = await this.getCarritoById(carritoId);
-            if (!carrito) {
-                return null; // Si no existe el carrito, devolvemos null
-            }
+            const cart = await this.getCarritoById(carritoId);
+            const productInCart = cart.products.find(p => p.product.toString() === productoId);
 
-            const productoEnCarrito = carrito.products.find(item => item.product === productoId);
-            if (productoEnCarrito) {
-                // Si el producto ya está en el carrito, incrementamos la cantidad
-                productoEnCarrito.quantity += quantity;
+            if (productInCart) {
+                productInCart.quantity += quantity;
             } else {
-                // Si no está en el carrito, lo agregamos
-                carrito.products.push({ product: productoId, quantity });
+                cart.products.push({ product: productoId, quantity });
             }
 
-            // Guardamos los cambios en el archivo
-            await this.guardarCarritos();
-            return carrito;
+            await cart.save();
+            return cart;
         } catch (error) {
             console.log("Error al agregar producto al carrito", error);
-            return null;
         }
     }
-
-
-    async getcarrito() {
+    async eliminarProductoDelCarrito(carritoId, productoId) {
         try {
-            const arraycarrito = await this.leerArchivo();
-            return arraycarrito;
+            const cart = await this.getCarritoById(carritoId);
+            if (!cart) return null;
+
+            // Filtramos para remover el producto especificado
+            cart.products = cart.products.filter(p => p.product.toString() !== productoId);
+            await cart.save();
+            return cart;
         } catch (error) {
-            console.log("Error al leer el archivo", error);
+            console.log("Error al eliminar producto del carrito", error);
         }
-
-    }
-    async leerArchivo() {
-        const respuesta = await fs.readFile(this.path, "utf-8");
-        const arrayProductos = JSON.parse(respuesta);
-        return arrayProductos;
     }
 
+    async actualizarCarritoConProductos(carritoId, productos) {
+        try {
+            const cart = await this.getCarritoById(carritoId);
+            if (!cart) return null;
+
+            // Reemplazamos los productos actuales con el nuevo arreglo de productos
+            cart.products = productos;
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.log("Error al actualizar carrito con productos", error);
+        }
+    }
+
+    async actualizarCantidadProducto(carritoId, productoId, cantidad) {
+        try {
+            const cart = await this.getCarritoById(carritoId);
+            if (!cart) return null;
+
+            const productInCart = cart.products.find(p => p.product.toString() === productoId);
+            if (productInCart) {
+                productInCart.quantity = cantidad;
+                await cart.save();
+                return cart;
+            } else {
+                return null; // Producto no encontrado en el carrito
+            }
+        } catch (error) {
+            console.log("Error al actualizar cantidad del producto en el carrito", error);
+        }
+    }
+
+    async eliminarTodosLosProductosDelCarrito(carritoId) {
+        try {
+            const cart = await this.getCarritoById(carritoId);
+            if (!cart) return null;
+
+            cart.products = [];
+            await cart.save();
+            return cart;
+        } catch (error) {
+            console.log("Error al eliminar todos los productos del carrito", error);
+        }
+    }
 }
 
-module.exports = CartManager; 
+module.exports = CartManager;

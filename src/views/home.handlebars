@@ -10,9 +10,24 @@
                     <p class="card-text">Precio: {{this.price}}</p>
                     <p class="card-text">Código: {{this.code}}</p>
                     <p class="card-text">Stock: {{this.stock}}</p>
+                    <form action="api/carts/671fed948506a28c0d8a6a7e/product/{{this._id}}" method="POST">
+                        <button class="btn btn-primary" onclick="addToCart('{{this._id}}')">añadir al carrito</button>
+                    </form>
                 </div>
             </div>
         </div>
         {{/each}}
+    </div>
+
+    <div class="text-center my-4">
+        <p>Página {{currentPage}} de {{totalPages}}</p>
+
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}" class="btn btn-primary mx-2">Anterior</a>
+        {{/if}}
+
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}" class="btn btn-primary mx-2">Siguiente</a>
+        {{/if}}
     </div>
 </div>

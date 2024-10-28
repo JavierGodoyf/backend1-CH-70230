@@ -23,8 +23,8 @@ const renderProductos = (productos) => {
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text">Descripción: ${item.description}</p>
                     <p class="card-text">Precio: ${item.price}</p>
-                    <p class="card-text">Id: ${item.id}</p>
-                    <a href="#" class="btn btn-danger btn-delete" data-id="${item.id}">Borrar</a>
+                    <p class="card-text">Id: ${item._id}</p>
+                    <a href="#" class="btn btn-danger btn-delete" data-_id="${item._id}">Borrar</a>
                 </div>
             </div>
         `;
@@ -35,7 +35,7 @@ const renderProductos = (productos) => {
     // Añadir evento de clic para los botones de borrar
     document.querySelectorAll(".btn-delete").forEach(button => {
         button.addEventListener("click", (event) => {
-            const idProducto = event.target.getAttribute("data-id");
+            const idProducto = event.target.getAttribute("data-_id");
             fetch(`/api/products/${idProducto}`, {
                 method: "DELETE",
             })
