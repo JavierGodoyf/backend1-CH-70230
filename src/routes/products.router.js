@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ProductManager = require("../managers/product-manager.js");
-const manager = new ProductManager("./src/data/productos.json");
+const manager = new ProductManager();
 
 //1) La ruta raíz GET / deberá listar todos los productos de la base. (Incluyendo la limitación ?limit del desafío anterior
 
