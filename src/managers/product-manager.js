@@ -12,7 +12,7 @@ class ProductManager {
         }
     }
 
-    async getProducts(page = 1, limit) {
+    async getProducts(page = 1, limit = 10) {
         try {
             const products = await Product.paginate({}, { page, limit });
             return products;

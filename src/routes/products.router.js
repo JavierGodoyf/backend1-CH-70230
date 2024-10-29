@@ -7,14 +7,10 @@ const manager = new ProductManager("./src/data/productos.json");
 
 router.get("/", async (req, res) => {
     let limit = req.query.limit;
+    let pagina = req.query.page;
     try {
-        const arrayProductos = await manager.getProducts();
-
-        if (limit) {
-            res.send(arrayProductos.slice(0, limit));
-        } else {
-            res.send(arrayProductos);
-        }
+        const arrayProductos = await manager.getProducts(pagina, limit);
+        res.send(arrayProductos);
     } catch (error) {
         res.status(500).send("Error del servidor");
     }

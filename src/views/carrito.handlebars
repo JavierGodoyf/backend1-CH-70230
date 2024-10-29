@@ -1,0 +1,14 @@
+<h1>Productos en el Carrito</h1>
+
+{{#each productos}}
+<div class="col-md-12 mb-4">
+    <div class="card h-100">
+        <div class="card-body">
+            <h5 class="card-title">{{this.product.title}}</h5>
+            <p class="card-text">Descripción: {{this.product.description}}</p>
+            <p class="card-text">Precio Unidad: {{this.product.price}}$</p>
+            <p class="card-text">Cantidad: {{this.quantity}}</p>
+        </div>
+    </div>
+</div>
+{{/each}}

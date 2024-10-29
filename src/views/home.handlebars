@@ -7,11 +7,11 @@
                 <div class="card-body">
                     <h5 class="card-title">{{this.title}}</h5>
                     <p class="card-text">Descripción: {{this.description}}</p>
-                    <p class="card-text">Precio: {{this.price}}</p>
+                    <p class="card-text">Precio: {{this.price}}$</p>
                     <p class="card-text">Código: {{this.code}}</p>
                     <p class="card-text">Stock: {{this.stock}}</p>
-                    <form action="api/carts/671fed948506a28c0d8a6a7e/product/{{this._id}}" method="POST">
-                        <button class="btn btn-primary" onclick="addToCart('{{this._id}}')">añadir al carrito</button>
+                    <form action="producto/{{this._id}}" method="GET">
+                        <button class="btn btn-primary">ver detalles</button>
                     </form>
                 </div>
             </div>

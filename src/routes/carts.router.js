@@ -2,9 +2,8 @@ const express = require("express");
 const router = express.Router();
 const CartManager = require("../managers/cart-manager.js"); // Asegúrate de tener este archivo en la ruta correcta
 const ProductManager = require("../managers/product-manager.js"); // Para verificar la existencia del producto
-
-const cartManager = new CartManager("./src/data/carritos.json");
-const productManager = new ProductManager("./src/data/productos.json");
+const cartManager = new CartManager();
+const productManager = new ProductManager();
 
 // 1) POST / - Crear un nuevo carrito
 router.post("/", async (req, res) => {
